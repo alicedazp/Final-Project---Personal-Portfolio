@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, intial-scale=1.0"/> 
     <meta http-equiv="X-pUA-Compatible" content="ie-edge" /> 
     <title>Star Rating in HTML CSS & Javascript</title> 
-    <!--Fontawesome CDN Link --> 
     <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"/> 
-    <! the link in order to make the stars >
   </head> 
   <style> 
     { 
@@ -23,7 +21,6 @@
       justify-content: center; 
       background: linear-gradient(45deg, #ADD8E6, #87CEEB); 
     }
-    /* sets the box in place, put it in the center, and also the color of the backrgound  */
     .rating-box{
       position: relative; 
       background: #fff; 
@@ -38,11 +35,10 @@
       margin-bottom: 20px; 
       text-align: center; 
     }
-    /* the texts settings, fonts how it's centered, weight, etc */
     .rating-box .stars{ 
       display: flex; 
       align-items: center; 
-      gap: 25px; /* how far the stars are from each other */
+      gap: 25px; 
     }
     .stars i{
       color: #e6e6e6; 
@@ -51,7 +47,7 @@
       transition: color 0.2s ease;
     }
     .stars i.active{
-      color: #87CEFA; /* changes the star when clicked into another color */
+      color: #87CEFA; 
     }
   </style> 
   <body> 
@@ -66,16 +62,13 @@
       </div>
     </div>
     </body> 
-  <script defer> /* the function of the code, how to make iot function correctly */
-    /* tag all elements with the"i" and store them in Nodelist called "stars"*/const stars = document.querySelectorAll(".stars i"); 
-    console.log(stars); /* check if it stores*/
-/* to loop the stars in Nodelist */ stars.forEach((star, index1) => {
-  /* adding an addEventListener runs a function when the "Click" is being triggered*/ star.addEventListener("click", () => { 
+  <script defer>
+    const stars = document.querySelectorAll(".stars i"); 
+    console.log(stars); stars.forEach((star, index1) => {
+star.addEventListener("click", () => { 
      console.log(index1);          
-    /*looping it again*/ stars.forEach((star,index2) => {
+stars.forEach((star,index2) => {
       console.log(index2);
-      /*Adding the "active" class to the clicked star and any stars with a lower index. 
-      and remove active class from any stars with a higher index*/ 
       index1 >= index2 ? star.classList.add("active") : star.classList.remove("active");
     })
   })
